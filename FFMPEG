@@ -1,0 +1,60 @@
+Step 1: Download FFmpeg
+Go to: https://ffmpeg.org/download.html
+Click Windows
+Download from “Windows builds” (usually takes you to gyan.dev)
+Download the ZIP file (full build)
+
+Step 2: Extract it
+Right-click the ZIP file → Extract All
+Open the extracted folder
+You’ll see a folder like:
+ffmpeg-xxxx
+Go inside → open bin folder
+You should see:
+ffmpeg.exe
+This is the main file
+
+Step 3: Put your videos in one place
+Create a new folder (example: merge_videos)
+Copy all your 450 .mp4 files into it
+👉 Make sure:
+Files are named in order (very important!)
+Example:
+video1.mp4
+video2.mp4
+video3.mp4
+...
+
+Step 4: Create the list file
+
+Inside that same folder:
+
+Right click → New → Text Document
+Name it:
+list.txt
+Open it and paste like this:
+file 'video1.mp4'
+file 'video2.mp4'
+file 'video3.mp4'
+...
+
+Step 5: Open Command Prompt in that folder
+Open your folder
+Click on the address bar
+Type:
+cmd
+Press Enter
+
+Step 6: Run the merge command
+
+Now paste this:
+
+"path_to_ffmpeg\ffmpeg.exe" -f concat -safe 0 -i list.txt -c copy output.mp4 
+
+Step 7: Wait
+It will process quickly (few minutes max)
+You’ll get:
+output.mp4
+
+🎉 Done — your full video is ready  
+
